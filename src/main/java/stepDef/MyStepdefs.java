@@ -24,15 +24,14 @@ public class MyStepdefs {
 private final TestContext testContext;
  public MyStepdefs(TestContext testContext) {
   this.testContext = testContext;
-  loginPage = new LoginPage(driver);
+  loginPage = new LoginPage(testContext);
 
  }
 
  @Given("user navigates to the login page")
  public void login() {
+  driver=testContext.getDriver();
 
-  DriverProvider driverProvider = new DriverProvider();
-  driver = driverProvider.getdriver("chrome");
   driver.get("https://practicetestautomation.com/practice-test-login/");
   // driverProvider.getdriver("edge");
 

@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.time.Duration;
+
 public class DriverProvider {
  ;
 WebDriver driver;
@@ -16,6 +18,7 @@ WebDriver driver;
 
           case "chrome":
               driver = new ChromeDriver();
+              driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
               break;
 
           case "firefox":

@@ -1,5 +1,6 @@
 package pages;
 
+import context.TestContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,16 +8,18 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
     WebDriver driver;
-    public LoginPage(WebDriver driver) {
+    TestContext testContext;
+    public LoginPage(TestContext testContext) {
 
 
         // Constructor
+            this.testContext=testContext;
 
-            this.driver = driver;
-            PageFactory.initElements(driver, this);
+            PageFactory.initElements(testContext.getDriver(), this);
+        this.driver= testContext.getDriver();
         }
         // Page elements
-        @FindBy(id = "username")
+        @FindBy(xpath = "//*[@id='username']")
         WebElement usernameField;
 
         @FindBy(id = "password")
@@ -26,7 +29,7 @@ public class LoginPage {
         WebElement loginButton;
 
         // Page actions
-      public   void enterUsername(String username) {
+      public void enterUsername(String username) {
             usernameField.sendKeys(username);
         }
 
