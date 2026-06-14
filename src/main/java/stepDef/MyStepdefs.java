@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
+import pages.AfterLoginPage;
 import pages.LoginPage;
 
 import static org.junit.Assert.assertEquals;
@@ -21,10 +22,12 @@ public class MyStepdefs {
  private boolean logoutVisible;*/
  WebDriver driver;
  LoginPage loginPage;
+ //AfterLoginPage afterLoginPage;
 private final TestContext testContext;
  public MyStepdefs(TestContext testContext) {
   this.testContext = testContext;
   loginPage = new LoginPage(testContext);
+  //afterLoginPage= new AfterLoginPage(testContext);
 
  }
 
@@ -56,6 +59,7 @@ private final TestContext testContext;
 
 
   loginPage.clickLogin();
+ // afterLoginPage.clickLogin();
 
  }
 
