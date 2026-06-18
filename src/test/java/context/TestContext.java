@@ -7,8 +7,6 @@ public class TestContext {
     private WebDriver driver;
 
 
-
-
     public WebDriver getDriver() {
         return driver;
     }

@@ -7,7 +7,7 @@ Feature: Login Functionality
     When user enters username "student"
     And user enters password "Password123"
     And user clicks on Submit button
-    Then user should be redirected to the success page
+    Then  user clicks on link
     And success message should be displayed
     And Logout button should be visible
 

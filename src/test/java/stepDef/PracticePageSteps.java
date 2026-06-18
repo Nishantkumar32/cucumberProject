@@ -1,46 +1,42 @@
 package stepDef;
 
 
-
 import context.TestContext;
-import org.openqa.selenium.By;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import io.cucumber.java.en.*;
 import pages.AfterLoginPage;
-import pages.LoginPage;
 
 public class PracticePageSteps {
 
     WebDriver driver;
-   AfterLoginPage afterLoginPage;
-    private final TestContext testContext;
+    AfterLoginPage afterLoginPage;
+    TestContext testContext;
 
     public PracticePageSteps(TestContext testContext) {
-        this.testContext = testContext;
+       this.testContext=testContext;
+        System.out.println(testContext);
         afterLoginPage= new AfterLoginPage(testContext);
     }
 
     @Given("user is on the homepage")
     public void user_is_on_the_homepage() {
+
         // Initialize WebDriver (Chrome example)
 
     }
 
-    @When("user clicks on {string} link")
-    public void user_clicks_on_link(String linkText) {
-afterLoginPage.clickLogin();;
+    @When("user clicks on link")
+    public void user_clicks_on_link() {
+        afterLoginPage.clickLogin();
+        ;
     }
 
     @And("{string} link is displayed")
     public void link_is_displayed(String linkText) {
 
-    }
-
-    @And("user clicks on {string} link")
-    public void user_clicks_on_test_exceptions_link(String linkText) {
-afterLoginPage.clickLogin();
     }
 
     @Then("user should be navigated to the Test Exceptions page")
